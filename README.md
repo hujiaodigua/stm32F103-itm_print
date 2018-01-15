@@ -1,8 +1,9 @@
 # simple-gcc-stm32-project
 
-这是一个我在一开始学习在ubuntu下编程使用的工程，
-是使用CooCox的启动文件和原子例程序改写的，其功能是使原
-子开发板上的一个LED灯闪烁。该工程的学习与使用教程请参考我的
-博客：
+gdb调试代码使用工程，代码中含有dwt和itm寄存器的配置
 
-> http://blog.csdn.net/zhengyangliu123
+完成了itm_print功能，以及dwt_cyccnt功能
+
+itm_print需要配合openocd的itmdump工具使用
+
+而dwt_cyccnt为了使得对原有代码的影响达到最小，在openocd中进行读取寄存器以及复位寄存器操作

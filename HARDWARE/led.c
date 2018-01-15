@@ -1,35 +1,35 @@
 #include "led.h"
 
-//////////////////////////////////////////////////////////////////////////////////	 
-//本程序只供学习使用，未经作者许可，不得用于其它任何用途
-//ALIENTEK战舰STM32开发板
-//LED驱动代码	   
-//正点原子@ALIENTEK
-//技术论坛:www.openedv.com
-//修改日期:2012/9/2
-//版本：V1.0
-//版权所有，盗版必究。
-//Copyright(C) 广州市星翼电子科技有限公司 2009-2019
-//All rights reserved									  
-////////////////////////////////////////////////////////////////////////////////// 	   
+//////////////////////////////////////////////////////////////////////////////////
+//卤戮鲁脤脨貌脰禄鹿漏脩搂脧掳脢鹿脫脙拢卢脦麓戮颅脳梅脮脽脨铆驴脡拢卢虏禄碌脙脫脙脫脷脝盲脣眉脠脦潞脦脫脙脥戮
+//ALIENTEK mini垄SSTM32驴陋路垄掳氓
+//LED脟媒露炉麓煤脗毛
+//脮媒碌茫脭颅脳脫@ALIENTEK
+//录录脢玫脗脹脤鲁:www.openedv.com
+//脨脼赂脛脠脮脝脷:2012/9/2
+//掳忙卤戮拢潞V1.0
+//掳忙脠篓脣霉脫脨拢卢碌脕掳忙卤脴戮驴隆拢
+//Copyright(C) 鹿茫脰脻脢脨脨脟脪铆碌莽脳脫驴脝录录脫脨脧脼鹿芦脣戮 2009-2019
+//All rights reserved
+//////////////////////////////////////////////////////////////////////////////////
 
-//初始化PB5和PE5为输出口.并使能这两个口的时钟		    
-//LED IO初始化
+//鲁玫脢录禄炉PB5潞脥PE5脦陋脢盲鲁枚驴脷.虏垄脢鹿脛脺脮芒脕陆赂枚驴脷碌脛脢卤脰脫
+//LED IO鲁玫脢录禄炉
 void LED_Init(void)
 {
- 
- GPIO_InitTypeDef  GPIO_InitStructure;
- 	
- RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_GPIOE, ENABLE);	 //使能PB,PE端口时钟
-	
- GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;				 //LED0-->PB.5 端口配置
- GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出
- GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
- GPIO_Init(GPIOB, &GPIO_InitStructure);					 //根据设定参数初始化GPIOB.5
- GPIO_SetBits(GPIOB,GPIO_Pin_5);						 //PB.5 输出高
 
- GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;	    		 //LED1-->PE.5 端口配置, 推挽输出
- GPIO_Init(GPIOE, &GPIO_InitStructure);	  				 //推挽输出 ，IO口速度为50MHz
- GPIO_SetBits(GPIOE,GPIO_Pin_5); 						 //PE.5 输出高 
+ GPIO_InitTypeDef  GPIO_InitStructure;
+
+ //RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOD, ENABLE);	 //脢鹿脛脺PA,PD露脣驴脷脢卤脰脫
+RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
+
+ GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;				 //LED0-->PA.8 露脣驴脷脜盲脰脙
+ GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //脥脝脥矛脢盲鲁枚
+ GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO驴脷脣脵露脠脦陋50MHz
+ GPIO_Init(GPIOC, &GPIO_InitStructure);					 //赂霉戮脻脡猫露篓虏脦脢媒鲁玫脢录禄炉GPIOA.8
+ GPIO_SetBits(GPIOC,GPIO_Pin_8);						 //PA.8 脢盲鲁枚赂脽
+
+ GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;	    		 //LED1-->PD.2 露脣驴脷脜盲脰脙, 脥脝脥矛脢盲鲁枚
+ GPIO_Init(GPIOC, &GPIO_InitStructure);	  				 //脥脝脥矛脢盲鲁枚 拢卢IO驴脷脣脵露脠脦陋50MHz
+ GPIO_SetBits(GPIOC,GPIO_Pin_4); 						 //PD.2 脢盲鲁枚赂脽
 }
- 
