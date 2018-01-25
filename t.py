@@ -1,11 +1,11 @@
 import gdb
 import time
 import socket
-from cmdebug import dwt_gdbport dwt_gdb
+from cmdebug import dwt_gdb
 
 
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect(('192.168.0.100',8080))
+s.connect(('192.168.0.103',6666))
 #s.setblocking(0)
 
 #The value of the global varaible which in the project
@@ -24,6 +24,7 @@ while(1):
     s1 = s.recv(64)
     if(s1 == b'debug_start'):
         s.send(b'debug_start ok!!!')
+        gdb.execute('set pagination off')
         while(1):
             s2 = s.recv(64)
             if(s2 == b'debug_end'):
