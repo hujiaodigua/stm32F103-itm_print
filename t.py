@@ -1,7 +1,7 @@
 import gdb
 import time
 import socket
-from cmdebug import dwt_gdbport dwt_gdb
+from cmdebug import dwt_gdb
 
 
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
