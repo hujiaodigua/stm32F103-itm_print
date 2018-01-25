@@ -5,7 +5,7 @@ from cmdebug import dwt_gdb
 
 
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect(('192.168.0.103',6666))
+s.connect(('192.168.0.103',8000))
 #s.setblocking(0)
 
 #The value of the global varaible which in the project
@@ -19,6 +19,8 @@ gdb.execute('monitor reset')
 gdb.execute('monitor halt')
 gdb.execute('load')
 time.sleep(1)
+
+s.send(b'gdb is ready!')
 
 while(1):
     s1 = s.recv(64)
